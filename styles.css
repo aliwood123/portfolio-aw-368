@@ -1,0 +1,474 @@
+:root {
+    --primary-blue: hsl(210, 26%, 87%);
+    --header-footer-blue: hsl(209, 24%, 84%);
+    --text-blue: hsl(209, 25%, 29%);
+    --primary-parchment: hsl(43, 51%, 93%);
+    --header-parchment: hsl(43, 75%, 83%);
+    --text-black: hsl(0, 0%, 24%);
+    --photo-white: hsl(43, 100%, 99%);
+    --hover-olive: hsl(61, 76%, 23%);
+    --primary-font: "Courier Prime", monospace;
+    --header-font: "Homemade Apple", sans-serif;
+  }
+  
+  html {
+    font-size: 16px;
+    scroll-behavior: smooth;
+  }
+  
+  * {
+    box-sizing: border-box;
+  }
+  
+  body {
+    background-color: var(--primary-blue);
+    font-family: var(--primary-font);
+    color: var(--text-blue);
+    margin: 0;
+    padding: 0;
+  }
+  
+  main {
+    margin: 0 auto;
+  }
+  
+  #header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    background-color: var(--header-footer-blue);
+    color: var(--text-blue);
+    width: 100%;
+    padding: 10px 40px;
+  }
+  
+  #navbar {
+    margin-left: auto;
+  }
+  
+  ul {
+    list-style: none;
+  }
+  
+  #navbar ul {
+    display: flex;
+    flex-direction: row;
+    margin: 0;
+    padding: 0;
+  }
+  
+  #navbar ul li{
+    margin-right: 10px;
+  }
+  
+  #navbar ul li:last-child {
+    margin-right: 0;
+  }
+  
+  a {
+    text-decoration: none;
+  }
+  
+  #navbar a {
+    display: inline-block;
+    color: var(--text-blue);
+    padding: 5px 10px;
+    transition: color 0.3s ease, transform 0.3s ease;
+  }
+  
+  #navbar a:hover {
+    color: var(--hover-olive);
+    opacity: .7;
+    transform: scale(1.1);
+  }
+  
+  #welcome-section {
+    margin: 80px 40px 0px 0px;
+    height: 100vh;
+  }
+  
+  .container {
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    width: 100%;
+    max-width: none;
+    margin-left: 1.5vw;
+    margin-right: 1.5vw;
+  }
+  
+  #hero {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    width: 100%;
+    max-width: none;
+    padding-top: 20px;
+  }
+  
+  .hero-name-tag, .hero-name {
+    margin: 0;
+    text-align: left;
+  }
+  
+  h1, h2 {
+    color: var(--text-blue);
+    font-family: var(--header-font);
+  }
+  
+  .hero-name  {
+    font-size: 9.5vw;
+  }
+  
+  .hero-name-tag {
+    font-size: 1.15vw;
+  }
+  
+  #about {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    justify-items: center;
+    align-items: center;
+    width: 100%;
+    position: relative;
+    padding: 0 20px;
+    margin-bottom: 175px;
+  }
+  
+  #about-me-content {
+    width: 100%;
+    max-width: 100vw;
+    padding: 30px;
+    background-color: var(--primary-parchment);
+    margin-top: 50px;
+    position: relative;
+    z-index: 0;
+  }
+  
+  #portrait {
+    width: 302px;
+    height: 403px;
+    max-width: 100%;
+    border-radius: 10px;
+    box-shadow: 0px 6px 6px 4px rgba(0, 0, 0, 0.25);
+    position: absolute;
+    top: 56%;
+    left: 100px;
+    z-index: 1;
+    transform: translateY(-50%);
+  }
+  
+  #about p {
+    width: 40vw;
+    margin: auto;
+    font-size: 1.5rem;
+  }
+  
+  .masking-tape {
+    position: relative;
+    display: inline-block;
+    background-color: var(--header-parchment);
+    padding: 8px 20px;
+    border-radius: 5px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    transform: rotate(-2deg);
+  }
+  
+  .tape-text {
+    text-shadow: 0px 0px 2px rgba(0, 0, 0, 0.4);
+    letter-spacing: 1px;
+    display: inline-block;
+    text-align: center;
+    margin: 0;
+  }
+  
+  
+  /* Using CSS grid for project tiles */
+  
+  /* The #polaroid-grid is the parent element (container) */
+  
+  #projects {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 100px;
+    margin-bottom: 100px;
+  }
+  
+  #polaroid-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 320px); 
+    grid-template-rows: repeat(2, auto);  
+    grid-column-gap: 162px;                   
+    grid-row-gap: 45px;                       
+    justify-items: center;                    
+    align-items: center;                      
+    justify-content: center;
+    margin-top: 10px;
+  }
+  
+  .project-tile {
+    width: 389px;
+    height: auto;
+    background-color: var(--photo-white);
+    border: 15px solid var(--photo-white); 
+    border-radius: 5px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-bottom: 15px; 
+    margin: 20px;
+  }
+  
+  .caption {
+    font-size: 14px;
+    color: var(--text-black);
+    margin-top: 20px;
+    text-align: center;
+    width: 100%;
+  }
+  
+  
+  
+  #contact {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    max-height: 200px;
+    height: 100vh;
+    padding: 0 20px;
+    
+  }
+  #contact-container ul {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 40px;
+    margin-bottom: 100px;
+  }
+  
+  #contact-container ul li {
+    margin-right: 50px;
+  }
+  
+  #contact-container li a {
+    color: var(--text-blue);
+    transition: color 0.3s ease, transform 0.3s ease;
+  }
+  
+  #contact-container li a:hover {
+    color: var(--hover-olive);
+    opacity: .7;
+  }
+  
+  .contact-link i {
+    font-size: 1.5em;
+    color: var(--text-blue);
+  }
+  
+  footer {
+    background-color: var(--header-footer-blue);
+    color: var(--text-blue);
+    text-align: center;
+    padding: 10px 0px;
+  }
+  
+  /* Tablet Layout (up to 768px wide) */
+  @media screen and (max-width: 768px) {
+    html {
+      font-size: 14px; 
+    }
+  
+    /* Navbar */
+    #navbar ul {
+      flex-direction: column;
+      align-items: center;
+    }
+  
+    #navbar ul li {
+      margin-bottom: 10px; 
+    }
+  
+    #welcome-section {
+      margin-top: 100px; 
+      height: auto; /* Remove full viewport height on smaller devices */
+    }
+  
+    .hero-name {
+      font-size: 12vw; 
+    }
+  
+    #about {
+      padding: 0 10px;
+      margin-bottom: 100px; 
+    }
+  
+    #about-me-content {
+      padding: 20px;
+    }
+  
+    #portrait {
+      width: 250px; 
+      height: auto; 
+      top: 50%; /* Keep portrait centered */
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+  
+    #about p {
+      width: 70vw; 
+      font-size: 1.3rem; 
+    }
+  
+    /* Projects Section */
+    #polaroid-grid {
+      grid-template-columns: repeat(1, 100%); /* Single column layout on tablet */
+      grid-column-gap: 20px;
+      grid-row-gap: 30px;
+      justify-items: center;
+    }
+  
+    .project-tile {
+      width: 90%;
+      height: auto;
+      margin: 10px 0; /* Adjust tile margin for better spacing */
+    }
+  
+    .caption {
+      font-size: 1rem;
+    }
+  
+    #contact-container ul {
+      flex-direction: column;
+      align-items: center;
+    }
+  
+    #contact-container ul li {
+      margin-bottom: 20px; 
+    }
+  }
+  
+  /* Smartphone Layout (up to 480px wide) */
+  @media screen and (max-width: 480px) {
+    html {
+      font-size: 12px; 
+    }
+  
+    /* Navbar */
+    #navbar ul {
+      flex-direction: column;
+      align-items: center;
+    }
+  
+    #navbar ul li {
+      margin-bottom: 8px;
+    }
+  
+    #welcome-section {
+      margin-top: 80px; 
+      height: auto;
+    }
+  
+    .hero-name {
+      font-size: 14vw; 
+    }
+  
+    #about {
+      padding: 0 10px;
+      margin-bottom: 75px;
+    }
+  
+    #about-me-content {
+      padding: 15px;
+    }
+  
+    #portrait {
+      width: 200px; 
+      height: auto;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+  
+    #about p {
+      width: 85vw; 
+      font-size: 1.2rem; 
+    }
+  
+    /* Projects Section */
+    #polaroid-grid {
+      grid-template-columns: 1fr; /* Single column layout for mobile */
+      grid-column-gap: 10px;
+      grid-row-gap: 20px;
+    }
+  
+    .project-tile {
+      width: 95%;
+      height: auto;
+      margin: 10px 0;
+    }
+  
+    .caption {
+      font-size: 0.9rem; 
+    }
+  
+    #contact-container ul {
+      flex-direction: column;
+      align-items: center;
+    }
+  
+    #contact-container ul li {
+      margin-bottom: 15px; 
+    }
+  
+    .contact-link i {
+      font-size: 1.3em; /* Reduce icon size for mobile */
+    }
+  }
+  
+  /* Additional tweaks for very small screens (up to 320px wide) */
+  @media screen and (max-width: 320px) {
+    html {
+      font-size: 11px; 
+    }
+  
+    #hero .hero-name {
+      font-size: 16vw; 
+    }
+  
+    #portrait {
+      width: 180px; 
+    }
+  
+    #about p {
+      width: 90vw; 
+      font-size: 1rem; 
+    }
+  
+    /* Projects Section */
+    #polaroid-grid {
+      grid-template-columns: 1fr; 
+      grid-column-gap: 8px;
+      grid-row-gap: 15px;
+    }
+  
+    .project-tile {
+      width: 95%;
+      margin: 5px 0;
+    }
+  
+    .caption {
+      font-size: 0.85rem; 
+    }
+  }
